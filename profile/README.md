@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner-organization.png" alt="SATYA Ecosystem Banner" width="100%" />
+</p>
+
 # SATYA Ecosystem 🚗
 
 **SATYA (Smart Parking Assignment based on Proximity)** adalah ekosistem smart parking yang dirancang untuk mendukung proses pencarian, pemesanan, validasi, dan monitoring parkir secara digital. Sistem ini mengintegrasikan aplikasi mobile, web dashboard, backend API, database, dan computer vision service untuk membantu pengguna memperoleh informasi parkir secara real-time serta membantu mitra dalam mengelola operasional parkir.
@@ -10,8 +14,8 @@ SATYA dikembangkan sebagai solusi sistem parkir cerdas yang mendukung proses **p
 
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter\&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-0175C2?logo=dart\&logoColor=white)
+![Google Maps](https://img.shields.io/badge/Google%20Maps-4285F4?logo=googlemaps\&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?logo=supabase\&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase\&logoColor=black)
 
 Aplikasi mobile berbasis Flutter yang digunakan oleh pengguna untuk melihat ketersediaan slot parkir, melakukan booking, menerima alokasi slot, mengikuti arahan menuju lokasi parkir, dan melakukan pembayaran digital.
 
@@ -108,6 +112,19 @@ Mendukung proses pembayaran parkir secara digital dan pencatatan status pembayar
 
 Menyediakan dashboard bagi admin dan mitra untuk memantau lokasi parkir, slot, transaksi, pengguna, dan pelanggaran.
 
+## Development Workflow 🛠️
+
+Setiap service dikembangkan pada repository terpisah agar proses pengembangan lebih terstruktur dan mudah dikelola.
+
+```txt
+satya-mobile-app      : pengembangan aplikasi mobile pengguna
+satya-web-dashboard   : pengembangan dashboard admin dan mitra
+satya-backend-api     : pengembangan API dan business logic
+satya-ai-service      : pengembangan layanan computer vision
+```
+
+Setiap repository memiliki README masing-masing yang berisi panduan instalasi, struktur project, environment variables, dan instruksi development sesuai tech stack yang digunakan.
+
 ## Commit Convention 📝
 
 Project ini menggunakan format commit sederhana berbasis conventional commit, dengan awalan menggunakan bahasa Inggris dan deskripsi aktivitas menggunakan bahasa Indonesia.
@@ -143,6 +160,18 @@ docs     : perubahan dokumentasi
 
 ## Development Notes ⚠️
 
-Setiap repository memiliki README masing-masing yang berisi panduan instalasi, struktur project, environment variables, dan instruksi development sesuai tech stack yang digunakan.
+Pastikan file konfigurasi sensitif tidak di-push ke repository.
 
-Pastikan file konfigurasi sensitif seperti `.env`, API key, service role key, model file, dan dataset tidak di-push ke repository.
+File yang tidak boleh di-push:
+
+```txt
+.env
+.env.*
+API key
+service role key
+credential file
+model file
+dataset
+```
+
+File model AI dan dataset sebaiknya disimpan menggunakan penyimpanan terpisah karena ukuran file dapat menjadi besar dan tidak ideal untuk disimpan langsung di GitHub.
